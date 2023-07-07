@@ -6,9 +6,11 @@ from connections import bot, DbUtils
 def remind_today(chat_id: str):
     db_cursor = DbUtils()
     fetched_records = db_cursor.get_items(
-        f"select * from schedule where id=(select cast (strftime('%w', '2022-01-01') as integer) + 1);"
-    )[0]
-    remind_text = os.getenv('REMIND_TEXT') % fetched_records[1:]
+        f"select * from schedule where id=(select cast (strftime('%w', DATE('now')) as integer) + 1);"
+    )
+    if not fetched_records:
+        return
+    remind_text = os.getenv('REMIND_TEXT') % fetched_records[0][1:]
     bot.send_message(chat_id, remind_text)
 
 
