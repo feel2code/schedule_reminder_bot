@@ -1,7 +1,7 @@
 import os
 
 from connections import bot, DbUtils
-from reminder import remind_all_services
+from reminder import remind_all_services, remind_today
 
 
 @bot.message_handler(content_types=['text'])
@@ -13,6 +13,8 @@ def get_text_messages(message):
             bot.register_next_step_handler(message, update_service)
         elif message.text == '/all_service':
             remind_all_services(message.chat.id)
+        elif message.text == '/service':
+            remind_today(message.chat.id)
         elif message.text == '/update_service_all':
             pass
 
