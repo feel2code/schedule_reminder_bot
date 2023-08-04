@@ -21,7 +21,7 @@ def get_text_messages(message):
 
 def update_service(message):
     try:
-        weekday, role, servant, nick, dl = message.text.split(',')
+        weekday, role, servant, nick, dl = message.text.replace(' ', '').split(',')
         iterator = iter(os.getenv("SERVICE_MAPPER").split(','))
         role_map = dict(zip(iterator, iterator))
         service = role_map[role]
