@@ -2,12 +2,6 @@
 <b>Just another one simple telegram schedule reminder bot</b>
 
 <p>
-    <a href="https://python.org">
-        <img height=28px src="http://forthebadge.com/images/badges/made-with-python.svg" alt="made-with-python">
-    </a>
-    <a href="https://GitHub.com/feel2code">
-        <img height=28px src="http://ForTheBadge.com/images/badges/built-with-love.svg" alt="built-with-love">
-    </a>
     <img src="https://img.shields.io/github/license/feel2code/schedule_reminder_bot?style=for-the-badge&logo=appveyor" alt="LICENSE">
     <img src="https://img.shields.io/github/contributors/feel2code/schedule_reminder_bot?style=for-the-badge&logo=appveyor" alt="Contributors">
     <img src="https://img.shields.io/github/repo-size/feel2code/schedule_reminder_bot?style=for-the-badge&logo=appveyor" alt="Repository Size">
