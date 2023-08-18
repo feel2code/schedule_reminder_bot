@@ -24,7 +24,7 @@ def update_service(message):
         weekday, role, servant, nick, dl = message.text.replace(' ', '').split(',')
         iterator = iter(os.getenv("SERVICE_MAPPER").split(','))
         role_map = dict(zip(iterator, iterator))
-        service = role_map[role]
+        service = role_map[role.title()]
         db_cursor = DbUtils()
         db_cursor.update_items(
             f"update schedule set {service}='{servant} {nick}', {service}_dl='{dl}' where weekday='{weekday}';"
